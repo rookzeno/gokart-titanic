@@ -11,7 +11,11 @@ documentation = ""
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
-gokart = "*"
+gokart = "^1.2.2"
+kaggle = "^1.5.13"
+xgboost = "^1.7.5"
+scikit-learn = "^1.2.2"
+urllib3 = "<2" # To lock fast https://github.com/orgs/python-poetry/discussions/7937
 
 [tool.poetry.group.dev.dependencies]
 coverage = "*"
