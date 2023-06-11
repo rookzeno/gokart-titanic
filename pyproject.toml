@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "gokart-titanic"
+version = "0.0.0" 
+description="Learn how to use gokart with titanic data"
+authors = ["rookzeno"]
+license = "MIT"
+readme = "README.md"
+homepage = ""
+repository = ""
+documentation = ""
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+gokart = "*"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "*"
+yapf = "*"
+mypy = "*"
+flake8-quotes = "*"
+flake8-bugbear = "*"
+tox = "*"
+isort = "*"
+toml = "*"
+pyproject-flake8 = "*"
+
+[build-system]
+requires = ["poetry"]
+build-backend = "poetry.masonry.api"
+
+[tool.isort]
+line_length = 160
+
+[tool.yapf]
+based_on_style = "pep8"
+column_limit = 160
+
+[tool.yapfignore]
+ignore_patterns = [
+  ".venv/*",
+  "sandbox/*",
+  ".tox/*",
+]
+
+[tool.flake8]
+# F401: imported but unused
+per-file-ignores = """
+  __init__.py: F401
+"""
+max-line-length = 160
+extend-exclude = [
+  "resource/*",
+  ".venv/*",
+  "sandbox/*",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
