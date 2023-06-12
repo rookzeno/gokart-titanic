@@ -11,7 +11,7 @@ class TitanicKartPipeline(TitanicKart):
     submit: bool = luigi.BoolParameter()
 
     username: str = luigi.Parameter()
-    api_key: str = luigi.Parameter()
+    api_key: str = luigi.Parameter(significant=False)
 
     def requires(self):
         data = DownloadData(username=self.username, api_key=self.api_key)
