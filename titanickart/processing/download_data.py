@@ -10,7 +10,7 @@ from titanickart.task_template import TitanicKart
 
 class DownloadData(TitanicKart):
     username: str = luigi.Parameter()
-    api_key: str = luigi.Parameter()
+    api_key: str = luigi.Parameter(significant=False)
 
     def run(self):
         self.dump(self._run(self.username, self.api_key))
